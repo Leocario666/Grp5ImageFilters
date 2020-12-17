@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Presentation_Layer
 {
-    public partial class UserControl1: UserControl
+    public partial class MainForm: UserControl
     {
-        public UserControl1()
+        public MainForm()
         {
             InitializeComponent();
         }

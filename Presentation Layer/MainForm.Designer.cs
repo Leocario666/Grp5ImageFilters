@@ -1,6 +1,6 @@
 ﻿namespace Presentation_Layer
 {
-    partial class UserControl1
+    partial class MainForm
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -28,11 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.buttonLoad = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // buttonLoad
+            // 
+            this.buttonLoad.Location = new System.Drawing.Point(33, 448);
+            this.buttonLoad.Name = "buttonLoad";
+            this.buttonLoad.Size = new System.Drawing.Size(89, 31);
+            this.buttonLoad.TabIndex = 0;
+            this.buttonLoad.Text = "Load Image";
+            this.buttonLoad.UseVisualStyleBackColor = true;
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonLoad);
+            this.Name = "MainForm";
+            this.Size = new System.Drawing.Size(623, 611);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button buttonLoad;
     }
 }
