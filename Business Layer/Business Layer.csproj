@@ -46,8 +46,15 @@
     <Compile Include="IEdgeFilters.cs" />
     <Compile Include="ImageFilters.cs" />
     <Compile Include="IMatrix.cs" />
+    <Compile Include="ImportExportImage.cs" />
     <Compile Include="Matrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Input Output Files\Input Output Files.csproj">
+      <Project>{eaaab348-4c32-4577-84d4-34c5e9a37c50}</Project>
+      <Name>Input Output Files</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
