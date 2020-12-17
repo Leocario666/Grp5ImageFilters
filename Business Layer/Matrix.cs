@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business_Layer
 {
-    class Matrix
+   public class Matrix
     {
          public static double[,] Laplacian3x3
         {
