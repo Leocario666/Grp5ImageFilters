@@ -17,9 +17,39 @@ namespace Presentation_Layer
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonSave_click(object sender, EventArgs e)
         {
 
         }
+
+        private void buttonLoad_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void picPreview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonHell_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonZen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonNight_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
