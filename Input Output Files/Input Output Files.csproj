@@ -47,11 +47,5 @@
     <Compile Include="InOutPutFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Business Layer\Business Layer.csproj">
-      <Project>{95ff251a-c9d4-4a5b-8b1d-a702047d96e4}</Project>
-      <Name>Business Layer</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

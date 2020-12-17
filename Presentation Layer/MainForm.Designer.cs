@@ -34,9 +34,9 @@
             this.buttonZen = new System.Windows.Forms.Button();
             this.buttonNight = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picPreview = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.cmbEdgeDetection = new System.Windows.Forms.ComboBox();
+            this.picPreview = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonLoad
@@ -52,7 +52,7 @@
             // buttonSave
             // 
             this.buttonSave.Enabled = false;
-            this.buttonSave.Location = new System.Drawing.Point(482, 627);
+            this.buttonSave.Location = new System.Drawing.Point(482, 630);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(130, 35);
             this.buttonSave.TabIndex = 1;
@@ -104,34 +104,34 @@
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
-            // pictureBox1
+            // cmbEdgeDetection
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(600, 600);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.cmbEdgeDetection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEdgeDetection.Enabled = false;
+            this.cmbEdgeDetection.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEdgeDetection.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cmbEdgeDetection.FormattingEnabled = true;
+            this.cmbEdgeDetection.ItemHeight = 25;
+            this.cmbEdgeDetection.Location = new System.Drawing.Point(143, 629);
+            this.cmbEdgeDetection.Name = "cmbEdgeDetection";
+            this.cmbEdgeDetection.Size = new System.Drawing.Size(333, 33);
+            this.cmbEdgeDetection.TabIndex = 7;
+            this.cmbEdgeDetection.SelectedIndexChanged += new System.EventHandler(this.cmbEdgeDetection_SelectedIndexChanged);
             // 
             // picPreview
             // 
-            this.picPreview.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.picPreview.Enabled = false;
-            this.picPreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.picPreview.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.picPreview.FormattingEnabled = true;
-            this.picPreview.ItemHeight = 25;
-            this.picPreview.Location = new System.Drawing.Point(143, 629);
+            this.picPreview.Location = new System.Drawing.Point(12, 21);
             this.picPreview.Name = "picPreview";
-            this.picPreview.Size = new System.Drawing.Size(333, 33);
-            this.picPreview.TabIndex = 7;
-            this.picPreview.SelectedIndexChanged += new System.EventHandler(this.picPreview_SelectedIndexChanged);
+            this.picPreview.Size = new System.Drawing.Size(600, 600);
+            this.picPreview.TabIndex = 6;
+            this.picPreview.TabStop = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cmbEdgeDetection);
             this.Controls.Add(this.picPreview);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonNight);
             this.Controls.Add(this.buttonZen);
@@ -140,7 +140,7 @@
             this.Controls.Add(this.buttonLoad);
             this.Name = "MainForm";
             this.Size = new System.Drawing.Size(625, 780);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -153,7 +153,7 @@
         private System.Windows.Forms.Button buttonZen;
         private System.Windows.Forms.Button buttonNight;
         private System.Windows.Forms.Button buttonReset;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox picPreview;
+        private System.Windows.Forms.ComboBox cmbEdgeDetection;
+        private System.Windows.Forms.PictureBox picPreview;
     }
 }

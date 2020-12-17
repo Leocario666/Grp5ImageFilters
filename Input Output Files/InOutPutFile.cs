@@ -1,5 +1,5 @@
-﻿using Business_Layer;
-using System.Drawing;
+﻿using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
@@ -18,14 +18,12 @@ namespace Input_Output_Files
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 StreamReader streamReader = new StreamReader(ofd.FileName);
-                Bitmap originalBitmap = (Bitmap)Bitmap.FromStream(streamReader.BaseStream);
+                Bitmap bitmap = (Bitmap)Bitmap.FromStream(streamReader.BaseStream);
                 streamReader.Close();
                 
 
-               Bitmap previewBitmap = originalBitmap.CopyToSquareCanvas(600);
-                //picPreview.Image = previewBitmap;
 
-                return previewBitmap;
+                return bitmap;
             }
             return null;
         }

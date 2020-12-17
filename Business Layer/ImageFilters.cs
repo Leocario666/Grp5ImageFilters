@@ -4,43 +4,31 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 
-namespace ImageEdgeDetection
+namespace Business_Layer
 {
     public static class ImageFilters
     {
-        //black and white filter
-        public static Bitmap BlackWhite(Bitmap Bmp)
-        {
-            int rgb;
-            Color c;
-
-            for (int y = 0; y < Bmp.Height; y++)
-                for (int x = 0; x < Bmp.Width; x++)
-                {
-                    c = Bmp.GetPixel(x, y);
-                    rgb = (int)((c.R + c.G + c.B) / 3);
-                    Bmp.SetPixel(x, y, Color.FromArgb(rgb, rgb, rgb));
-                }
-            return Bmp;
-
-        }
 
         //apply color filter with primary color numbers
         public static Bitmap ApplyFilter(Bitmap bmp, int alpha, int red, int blue, int green)
         {
-
-            Bitmap temp = new Bitmap(bmp.Width, bmp.Height);
-
-            for (int i = 0; i < bmp.Width; i++)
+            if (Enumerable.Range(0, 255).Contains(alpha) && Enumerable.Range(0, 255).Contains(red) && Enumerable.Range(0, 255).Contains(blue) && Enumerable.Range(0, 255).Contains(green))
             {
-                for (int x = 0; x < bmp.Height; x++)
+
+                Bitmap temp = new Bitmap(bmp.Width, bmp.Height);
+
+                for (int i = 0; i < bmp.Width; i++)
                 {
-                    Color c = bmp.GetPixel(i, x);
-                    Color cLayer = Color.FromArgb(c.A / alpha, c.R / red, c.G / green, c.B / blue);
-                    temp.SetPixel(i, x, cLayer);
+                    for (int x = 0; x < bmp.Height; x++)
+                    {
+                        Color c = bmp.GetPixel(i, x);
+                        Color cLayer = Color.FromArgb(c.A / alpha, c.R / red, c.G / green, c.B / blue);
+                        temp.SetPixel(i, x, cLayer);
+                    }
                 }
+                return temp;
             }
-            return temp;
+            return null;
         }
 
     }
