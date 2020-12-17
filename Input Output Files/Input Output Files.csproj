@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IInOutPutFile.cs" />
     <Compile Include="InOutPutFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

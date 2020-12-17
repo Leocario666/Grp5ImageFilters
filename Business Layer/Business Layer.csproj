@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EdgeFilters.cs" />
+    <Compile Include="IEdgeFilters.cs" />
     <Compile Include="ImageFilters.cs" />
+    <Compile Include="IMatrix.cs" />
     <Compile Include="Matrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
