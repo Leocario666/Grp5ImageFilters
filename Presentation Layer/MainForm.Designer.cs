@@ -29,39 +29,118 @@
         private void InitializeComponent()
         {
             this.buttonLoad = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonHell = new System.Windows.Forms.Button();
+            this.buttonZen = new System.Windows.Forms.Button();
+            this.buttonNight = new System.Windows.Forms.Button();
+            this.buttonReset = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picPreview = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonLoad
             // 
-            this.buttonLoad.Location = new System.Drawing.Point(66, 862);
-            this.buttonLoad.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonLoad.Location = new System.Drawing.Point(12, 627);
             this.buttonLoad.Name = "buttonLoad";
-            this.buttonLoad.Size = new System.Drawing.Size(178, 60);
+            this.buttonLoad.Size = new System.Drawing.Size(125, 35);
             this.buttonLoad.TabIndex = 0;
             this.buttonLoad.Text = "Load Image";
             this.buttonLoad.UseVisualStyleBackColor = true;
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
-            // button1
+            // buttonSave
             // 
-            this.button1.Location = new System.Drawing.Point(884, 862);
-            this.button1.Margin = new System.Windows.Forms.Padding(6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(178, 60);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Save Image";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSave.Enabled = false;
+            this.buttonSave.Location = new System.Drawing.Point(482, 627);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(130, 35);
+            this.buttonSave.TabIndex = 1;
+            this.buttonSave.Text = "Save Image";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_click);
+            // 
+            // buttonHell
+            // 
+            this.buttonHell.Enabled = false;
+            this.buttonHell.Location = new System.Drawing.Point(143, 680);
+            this.buttonHell.Name = "buttonHell";
+            this.buttonHell.Size = new System.Drawing.Size(107, 31);
+            this.buttonHell.TabIndex = 2;
+            this.buttonHell.Text = "Hell Filter";
+            this.buttonHell.UseVisualStyleBackColor = true;
+            this.buttonHell.Click += new System.EventHandler(this.buttonHell_Click);
+            // 
+            // buttonZen
+            // 
+            this.buttonZen.Enabled = false;
+            this.buttonZen.Location = new System.Drawing.Point(256, 680);
+            this.buttonZen.Name = "buttonZen";
+            this.buttonZen.Size = new System.Drawing.Size(107, 31);
+            this.buttonZen.TabIndex = 3;
+            this.buttonZen.Text = "Zen Filter";
+            this.buttonZen.UseVisualStyleBackColor = true;
+            this.buttonZen.Click += new System.EventHandler(this.buttonZen_Click);
+            // 
+            // buttonNight
+            // 
+            this.buttonNight.Enabled = false;
+            this.buttonNight.Location = new System.Drawing.Point(369, 680);
+            this.buttonNight.Name = "buttonNight";
+            this.buttonNight.Size = new System.Drawing.Size(107, 31);
+            this.buttonNight.TabIndex = 4;
+            this.buttonNight.Text = "Night Filter";
+            this.buttonNight.UseVisualStyleBackColor = true;
+            this.buttonNight.Click += new System.EventHandler(this.buttonNight_Click);
+            // 
+            // buttonReset
+            // 
+            this.buttonReset.Enabled = false;
+            this.buttonReset.Location = new System.Drawing.Point(143, 730);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(333, 31);
+            this.buttonReset.TabIndex = 5;
+            this.buttonReset.Text = "Reset";
+            this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(600, 600);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // picPreview
+            // 
+            this.picPreview.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.picPreview.Enabled = false;
+            this.picPreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.picPreview.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.picPreview.FormattingEnabled = true;
+            this.picPreview.ItemHeight = 25;
+            this.picPreview.Location = new System.Drawing.Point(143, 629);
+            this.picPreview.Name = "picPreview";
+            this.picPreview.Size = new System.Drawing.Size(333, 33);
+            this.picPreview.TabIndex = 7;
+            this.picPreview.SelectedIndexChanged += new System.EventHandler(this.picPreview_SelectedIndexChanged);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.picPreview);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.buttonReset);
+            this.Controls.Add(this.buttonNight);
+            this.Controls.Add(this.buttonZen);
+            this.Controls.Add(this.buttonHell);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonLoad);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "MainForm";
-            this.Size = new System.Drawing.Size(1246, 1175);
+            this.Size = new System.Drawing.Size(625, 780);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -69,6 +148,12 @@
         #endregion
 
         private System.Windows.Forms.Button buttonLoad;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonHell;
+        private System.Windows.Forms.Button buttonZen;
+        private System.Windows.Forms.Button buttonNight;
+        private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox picPreview;
     }
 }
