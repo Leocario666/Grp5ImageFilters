@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace Input_Output_Files
 {
-    public static class InOutPutFile
+    public class InOutPutFile : IInOutPutFile
     {
-        public static Bitmap LoadImage()
+        public Bitmap LoadImage()
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "Select an image file.";
@@ -27,7 +27,7 @@ namespace Input_Output_Files
         }
 
 
-        public static void SaveImage(Bitmap image)
+        public void SaveImage(Bitmap image)
         {
             if (image != null)
             {

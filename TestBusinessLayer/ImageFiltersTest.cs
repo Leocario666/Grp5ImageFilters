@@ -15,80 +15,70 @@ namespace TestBusinessLayer
         public void TestBelowARGBValue()
         {
             Bitmap bitmap = imageFilters.ApplyFilter(new Bitmap("..\\Sources\\test.png"), -1, -1, -1, -1);
-            Bitmap resultBitmap = null;
-            Assert.AreEqual(bitmap, resultBitmap);
+            Assert.AreEqual(bitmap, null);
         }
 
         [TestMethod]
         public void TestBelowAlphaValue()
         {
             Bitmap btmp = imageFilters.ApplyFilter(new Bitmap("..\\Sources\\test.png"), -1, 1, 1, 25);
-            Bitmap resultBitmap = null;
-            Assert.AreEqual(btmp, resultBitmap);
+            Assert.AreEqual(btmp, null);
         }
 
         [TestMethod]
         public void TestBelowRedValue()
         {
             Bitmap btmp = imageFilters.ApplyFilter(new Bitmap("..\\Sources\\test.png"), 1, -1, 1, 25);
-            Bitmap resultBitmap = null;
-            Assert.AreEqual(btmp, resultBitmap);
+            Assert.AreEqual(btmp, null);
         }
 
         [TestMethod]
         public void TestBelowBlueValue()
         {
             Bitmap btmp = imageFilters.ApplyFilter(new Bitmap("..\\Sources\\test.png"), 1, 1, -1, 25);
-            Bitmap resultBitmap = null;
-            Assert.AreEqual(btmp, resultBitmap);
+            Assert.AreEqual(btmp, null);
         }
 
         [TestMethod]
         public void TestBelowGreenValue()
         {
             Bitmap btmp = imageFilters.ApplyFilter(new Bitmap("..\\Sources\\test.png"), 1, 1, 1, -25);
-            Bitmap resultBitmap = null;
-            Assert.AreEqual(btmp, resultBitmap);
+            Assert.AreEqual(btmp, null);
         }
 
         [TestMethod]
         public void TestAboveARGBValue()
         {
             Bitmap btmp = imageFilters.ApplyFilter(new Bitmap("..\\Sources\\test.png"), 256, 256, 256, 256);
-            Bitmap resultBitmap = null;
-            Assert.AreEqual(btmp, resultBitmap);
+            Assert.AreEqual(btmp, null);
         }
 
         [TestMethod]
         public void TestAboveAlphaValue()
         {
             Bitmap btmp = imageFilters.ApplyFilter(new Bitmap("..\\Sources\\test.png"), 256, 1, 1, 25);
-            Bitmap resultBitmap = null;
-            Assert.AreEqual(btmp, resultBitmap);
+            Assert.AreEqual(btmp, null);
         }
 
         [TestMethod]
         public void TestAboveRedValue()
         {
             Bitmap btmp = imageFilters.ApplyFilter(new Bitmap("..\\Sources\\test.png"), 1, 256, 1, 25);
-            Bitmap resultBitmap = null;
-            Assert.AreEqual(btmp, resultBitmap);
+            Assert.AreEqual(btmp, null);
         }
 
         [TestMethod]
         public void TestAboveBlueValue()
         {
             Bitmap btmp = imageFilters.ApplyFilter(new Bitmap("..\\Sources\\test.png"), 1, 1, 256, 25);
-            Bitmap resultBitmap = null;
-            Assert.AreEqual(btmp, resultBitmap);
+            Assert.AreEqual(btmp, null);
         }
 
         [TestMethod]
         public void TestAboveGreenValue()
         {
             Bitmap btmp = imageFilters.ApplyFilter(new Bitmap("..\\Sources\\test.png"), 1, 1, 1, 256);
-            Bitmap resultBitmap = null;
-            Assert.AreEqual(btmp, resultBitmap);
+            Assert.AreEqual(btmp, null);
         }
 
         [TestMethod]
