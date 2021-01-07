@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Drawing2D;
 using Input_Output_Files;
 
@@ -22,7 +23,7 @@ namespace Business_Layer
         //Method use in the load Image
         public Bitmap CopyToSquareCanvas(Bitmap sourceBitmap, int canvasWidthLenght)
         {
-            if (sourceBitmap != null)
+            try 
             {
                 float ratio;
                 int maxSide = sourceBitmap.Width > sourceBitmap.Height ?
@@ -50,8 +51,9 @@ namespace Business_Layer
                 }
 
                 return bitmapResult;
-            } else
+            } catch(Exception e)
             {
+                Console.WriteLine(e);
                 return null;
             }
         }

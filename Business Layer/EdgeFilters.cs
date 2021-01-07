@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 
@@ -9,30 +10,37 @@ namespace Business_Layer
         private readonly Matrix matrix = new Matrix();
         public Bitmap ApplyEdgeDetection(Bitmap sourceBitmap, string selection)
         {
-            Bitmap bitmapResult;
+            if(sourceBitmap == null)
+                return null;
 
-            switch (selection)
-            {
-                case "Laplacian 3x3": 
-                    bitmapResult = Laplacian3x3Filter(sourceBitmap);
-                    break;
-                case "Laplacian 5x5": 
-                    bitmapResult = Laplacian5x5Filter(sourceBitmap);
-                    break;
-                case "Laplacian of Gaussian": 
-                    bitmapResult = LaplacianOfGaussianFilter(sourceBitmap);
-                    break;
-                default:
-                    bitmapResult = sourceBitmap;
-                    break;
-            }
+                Bitmap bitmapResult;
 
-            return bitmapResult;
+                switch (selection)
+                {
+                    case "Laplacian 3x3":
+                        bitmapResult = Laplacian3x3Filter(sourceBitmap);
+                        break;
+                    case "Laplacian 5x5":
+                        bitmapResult = Laplacian5x5Filter(sourceBitmap);
+                        break;
+                    case "Laplacian of Gaussian":
+                        bitmapResult = LaplacianOfGaussianFilter(sourceBitmap);
+                        break;
+                    default:
+                        bitmapResult = sourceBitmap;
+                        break;
+                }
+
+                return bitmapResult;
+            
 
         }
 
         public Bitmap Laplacian3x3Filter(Bitmap sourceBitmap)
         {
+            if (sourceBitmap == null)
+                return null;
+
             Bitmap resultBitmap = ConvolutionFilter(sourceBitmap,
                                     matrix.Laplacian3x3);
 
@@ -41,6 +49,9 @@ namespace Business_Layer
 
         public Bitmap Laplacian5x5Filter(Bitmap sourceBitmap)
         {
+            if (sourceBitmap == null)
+                return null;
+
             Bitmap resultBitmap = ConvolutionFilter(sourceBitmap,
                                      matrix.Laplacian5x5);
 
@@ -49,6 +60,9 @@ namespace Business_Layer
 
         public Bitmap LaplacianOfGaussianFilter(Bitmap sourceBitmap)
         {
+            if (sourceBitmap == null)
+                return null;
+
             Bitmap resultBitmap = ConvolutionFilter(sourceBitmap,
                                   matrix.LaplacianOfGaussian);
 
@@ -57,6 +71,9 @@ namespace Business_Layer
 
         public Bitmap ConvolutionFilter(Bitmap sourceBitmap, double[,] filterMatrix)
         {
+            if (sourceBitmap == null)
+                return null;
+
             {
                 BitmapData sourceData = sourceBitmap.LockBits(new Rectangle(0, 0,
                                          sourceBitmap.Width, sourceBitmap.Height),

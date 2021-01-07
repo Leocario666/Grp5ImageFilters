@@ -11,6 +11,14 @@ namespace TestBusinessLayer
     {
         private readonly ImageFilters imageFilters = new ImageFilters();
         private readonly CompareBitmap compareBitmap = new CompareBitmap();
+
+        [TestMethod]
+        public void TestNullBitmapInput()
+        {
+            Bitmap bitmap = imageFilters.ApplyFilter(null, -1, -1, -1, -1);
+            Assert.AreEqual(bitmap, null);
+        }
+
         [TestMethod]
         public void TestBelowARGBValue()
         {
