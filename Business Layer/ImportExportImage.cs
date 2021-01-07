@@ -6,15 +6,16 @@ namespace Business_Layer
 {
     public class ImportExportImage : IImportExportImage
     {
+        InOutPutFile ioFile = new InOutPutFile();
 
         public void SaveImg(Bitmap bitmap)
         {
-            InOutPutFile.SaveImage(bitmap);
+            ioFile.SaveImage(bitmap);
         }
 
         public Bitmap LoadImg()
         {
-            return CopyToSquareCanvas(InOutPutFile.LoadImage(), 600);
+            return CopyToSquareCanvas(ioFile.LoadImage(), 600);
         }
 
 
@@ -23,7 +24,7 @@ namespace Business_Layer
         {
             if (sourceBitmap != null)
             {
-                float ratio = 1.0f;
+                float ratio;
                 int maxSide = sourceBitmap.Width > sourceBitmap.Height ?
                               sourceBitmap.Width : sourceBitmap.Height;
 

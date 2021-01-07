@@ -47,7 +47,6 @@
     <Compile Include="IImageFilters.cs" />
     <Compile Include="IImportExportImage.cs" />
     <Compile Include="ImageFilters.cs" />
-    <Compile Include="IMatrix.cs" />
     <Compile Include="ImportExportImage.cs" />
     <Compile Include="Matrix.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
