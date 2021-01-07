@@ -4,33 +4,58 @@ using System.Runtime.InteropServices;
 
 namespace Business_Layer
 {
-    public static class EdgeFilters 
+    public class EdgeFilters : IEdgeFilters
     {
-        public static Bitmap Laplacian3x3Filter(Bitmap sourceBitmap, bool grayscale)
+        private readonly Matrix matrix = new Matrix();
+        public Bitmap ApplyEdgeDetection(Bitmap sourceBitmap, string selection)
         {
-            Bitmap resultBitmap = EdgeFilters.ConvolutionFilter(sourceBitmap,
-                                    Matrix.Laplacian3x3, 1.0, 0, grayscale);
+            Bitmap bitmapResult;
+
+            switch (selection)
+            {
+                case "Laplacian 3x3": 
+                    bitmapResult = Laplacian3x3Filter(sourceBitmap);
+                    break;
+                case "Laplacian 5x5": 
+                    bitmapResult = Laplacian5x5Filter(sourceBitmap);
+                    break;
+                case "Laplacian of Gaussian": 
+                    bitmapResult = LaplacianOfGaussianFilter(sourceBitmap);
+                    break;
+                default:
+                    bitmapResult = sourceBitmap;
+                    break;
+            }
+
+            return bitmapResult;
+
+        }
+
+        public Bitmap Laplacian3x3Filter(Bitmap sourceBitmap)
+        {
+            Bitmap resultBitmap = ConvolutionFilter(sourceBitmap,
+                                    matrix.Laplacian3x3);
 
             return resultBitmap;
         }
 
-        public static Bitmap Laplacian5x5Filter(Bitmap sourceBitmap, bool grayscale)
+        public Bitmap Laplacian5x5Filter(Bitmap sourceBitmap)
         {
-            Bitmap resultBitmap = EdgeFilters.ConvolutionFilter(sourceBitmap,
-                                     Matrix.Laplacian5x5, 1.0, 0, grayscale);
+            Bitmap resultBitmap = ConvolutionFilter(sourceBitmap,
+                                     matrix.Laplacian5x5);
 
             return resultBitmap;
         }
 
-        public static Bitmap LaplacianOfGaussianFilter(Bitmap sourceBitmap)
+        public Bitmap LaplacianOfGaussianFilter(Bitmap sourceBitmap)
         {
-            Bitmap resultBitmap = EdgeFilters.ConvolutionFilter(sourceBitmap,
-                                  Matrix.LaplacianOfGaussian, 1.0, 0, true);
+            Bitmap resultBitmap = ConvolutionFilter(sourceBitmap,
+                                  matrix.LaplacianOfGaussian);
 
             return resultBitmap;
         }
 
-        public static Bitmap ConvolutionFilter(Bitmap sourceBitmap, double[,] filterMatrix, double factor = 1, int bias = 0, bool grayscale = false)
+        public Bitmap ConvolutionFilter(Bitmap sourceBitmap, double[,] filterMatrix)
         {
             {
                 BitmapData sourceData = sourceBitmap.LockBits(new Rectangle(0, 0,
@@ -44,35 +69,16 @@ namespace Business_Layer
                 Marshal.Copy(sourceData.Scan0, pixelBuffer, 0, pixelBuffer.Length);
                 sourceBitmap.UnlockBits(sourceData);
 
-                if (grayscale == true)
-                {
-                    float rgb = 0;
-
-                    for (int k = 0; k < pixelBuffer.Length; k += 4)
-                    {
-                        rgb = pixelBuffer[k] * 0.11f;
-                        rgb += pixelBuffer[k + 1] * 0.59f;
-                        rgb += pixelBuffer[k + 2] * 0.3f;
-
-
-                        pixelBuffer[k] = (byte)rgb;
-                        pixelBuffer[k + 1] = pixelBuffer[k];
-                        pixelBuffer[k + 2] = pixelBuffer[k];
-                        pixelBuffer[k + 3] = 255;
-                    }
-                }
-
-                double blue = 0.0;
-                double green = 0.0;
-                double red = 0.0;
+                double blue;
+                double green;
+                double red;
 
                 int filterWidth = filterMatrix.GetLength(1);
-                int filterHeight = filterMatrix.GetLength(0);
 
                 int filterOffset = (filterWidth - 1) / 2;
-                int calcOffset = 0;
+                int calcOffset;
 
-                int byteOffset = 0;
+                int byteOffset;
 
                 for (int offsetY = filterOffset; offsetY <
                     sourceBitmap.Height - filterOffset; offsetY++)
@@ -112,10 +118,6 @@ namespace Business_Layer
                                                           filterX + filterOffset];
                             }
                         }
-
-                        blue = factor * blue + bias;
-                        green = factor * green + bias;
-                        red = factor * red + bias;
 
                         if (blue > 255)
                         { blue = 255; }

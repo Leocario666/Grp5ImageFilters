@@ -8,7 +8,7 @@ namespace Business_Layer
 {
    public class Matrix
     {
-         public static double[,] Laplacian3x3
+         public double[,] Laplacian3x3
         {
             get
             {
@@ -19,7 +19,7 @@ namespace Business_Layer
             }
         }
 
-        public static double[,] Laplacian5x5
+        public double[,] Laplacian5x5
         {
             get
             {
@@ -32,7 +32,7 @@ namespace Business_Layer
             }
         }
 
-        public static double[,] LaplacianOfGaussian
+        public double[,] LaplacianOfGaussian
         {
             get
             {

@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-        #region Code généré par le Concepteur de composants
+        #region Windows Form Designer generated code
 
         /// <summary>
         /// Méthode requise pour la prise en charge du concepteur - ne modifiez pas 
@@ -112,6 +112,11 @@
             this.cmbEdgeDetection.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cmbEdgeDetection.FormattingEnabled = true;
             this.cmbEdgeDetection.ItemHeight = 25;
+            this.cmbEdgeDetection.Items.AddRange(new object[] {
+            "None",
+            "Laplacian 3x3",
+            "Laplacian 5x5",
+            "Laplacian of Gaussian"});
             this.cmbEdgeDetection.Location = new System.Drawing.Point(143, 629);
             this.cmbEdgeDetection.Name = "cmbEdgeDetection";
             this.cmbEdgeDetection.Size = new System.Drawing.Size(333, 33);
@@ -120,6 +125,10 @@
             // 
             // picPreview
             // 
+            this.picPreview.BackColor = System.Drawing.Color.Silver;
+            this.picPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.picPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picPreview.Cursor = System.Windows.Forms.Cursors.Cross;
             this.picPreview.Location = new System.Drawing.Point(12, 21);
             this.picPreview.Name = "picPreview";
             this.picPreview.Size = new System.Drawing.Size(600, 600);
@@ -130,6 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(624, 774);
             this.Controls.Add(this.cmbEdgeDetection);
             this.Controls.Add(this.picPreview);
             this.Controls.Add(this.buttonReset);
@@ -139,7 +149,6 @@
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonLoad);
             this.Name = "MainForm";
-            this.Size = new System.Drawing.Size(625, 780);
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
             this.ResumeLayout(false);
 
@@ -157,3 +166,4 @@
         private System.Windows.Forms.PictureBox picPreview;
     }
 }
+

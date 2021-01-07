@@ -9,16 +9,16 @@ namespace Business_Layer
 {
    interface IEdgeFilters
     {
-        Bitmap Laplacian3x3Filter(Bitmap sourceBitmap, bool grayscale);
+        Bitmap ApplyEdgeDetection(Bitmap sourceBitmap, string selection);
 
-        Bitmap Laplacian5x5Filter(Bitmap sourceBitmap, bool grayscale);
+        Bitmap Laplacian3x3Filter(Bitmap sourceBitmap);
+
+        Bitmap Laplacian5x5Filter(Bitmap sourceBitmap);
 
         Bitmap LaplacianOfGaussianFilter(Bitmap sourceBitmap);
 
-        Bitmap ConvolutionFilter(Bitmap sourceBitmap, double[,] filterMatrix,
-                                 double factor = 1, int bias = 0, bool grayscale = false);
+        Bitmap ConvolutionFilter(Bitmap sourceBitmap, double[,] filterMatrix);
 
-        Bitmap CopyToSquareCanvas(Bitmap sourceBitmap, int canvasWidthLenght);
 
 
     }

@@ -6,11 +6,10 @@ using System.Text;
 
 namespace Business_Layer
 {
-    public static class ImageFilters
+    public class ImageFilters : IImageFilters
     {
-
         //apply color filter with primary color numbers
-        public static Bitmap ApplyFilter(Bitmap bmp, int alpha, int red, int blue, int green)
+        public Bitmap ApplyFilter(Bitmap bmp, int alpha, int red, int blue, int green)
         {
             if (Enumerable.Range(0, 255).Contains(alpha) && Enumerable.Range(0, 255).Contains(red) && Enumerable.Range(0, 255).Contains(blue) && Enumerable.Range(0, 255).Contains(green))
             {

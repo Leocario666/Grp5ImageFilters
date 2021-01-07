@@ -2,9 +2,9 @@
 
 namespace TestBusinessLayer
 {
-    public static class CompareBitmap
+    public class CompareBitmap
     {
-        public static bool Compare(Bitmap bmp1, Bitmap bmp2)
+        public bool Compare(Bitmap bmp1, Bitmap bmp2)
         {
             if (bmp1 == null || bmp2 == null)
                 return false;
