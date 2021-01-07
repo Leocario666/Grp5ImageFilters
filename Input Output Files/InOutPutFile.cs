@@ -21,8 +21,6 @@ namespace Input_Output_Files
                 Bitmap bitmap = (Bitmap)Bitmap.FromStream(streamReader.BaseStream);
                 streamReader.Close();
                 
-
-
                 return bitmap;
             }
             return null;
