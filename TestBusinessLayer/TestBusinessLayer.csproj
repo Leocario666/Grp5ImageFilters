@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompareBitmap.cs" />
+    <Compile Include="EdgeFiltersTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ImageFiltersTest.cs" />
   </ItemGroup>
