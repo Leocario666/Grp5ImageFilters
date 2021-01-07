@@ -14,8 +14,7 @@ namespace Business_Layer
 
         public static Bitmap LoadImg()
         {
-            Bitmap bitmap = CopyToSquareCanvas(InOutPutFile.LoadImage(), 600);
-            return bitmap;
+            return CopyToSquareCanvas(InOutPutFile.LoadImage(), 600);
         }
 
 
