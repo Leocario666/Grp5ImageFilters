@@ -7,8 +7,10 @@ using System.Drawing;
 
 namespace Business_Layer
 {
-    public interface IImageFilters
+    public interface IImageController
     {
-        Bitmap ApplyFilter(Bitmap bmp, int alpha, int red, int blue, int green);
+        void SaveImg(Bitmap bitmap);
+
+        Bitmap LoadImg();
     }
 }

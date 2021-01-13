@@ -9,8 +9,14 @@ namespace TestBusinessLayer
     [TestClass]
     public class ImageFiltersTest
     {
-        private readonly ImageFilters imageFilters = new ImageFilters();
+        private IImageFilters imageFilters;
         private readonly CompareBitmap compareBitmap = new CompareBitmap();
+
+        public ImageFiltersTest()
+        {
+            imageFilters = new ImageFilters(imageFilters);
+        }
+
 
         [TestMethod]
         public void TestNullBitmapInput()

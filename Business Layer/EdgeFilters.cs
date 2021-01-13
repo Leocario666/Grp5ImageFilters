@@ -7,6 +7,13 @@ namespace Business_Layer
 {
     public class EdgeFilters : IEdgeFilters
     {
+        public IEdgeFilters edgeFilters;
+
+        public EdgeFilters(IEdgeFilters edgeFilters)
+        {
+            this.edgeFilters = edgeFilters;
+        }
+
         private readonly Matrix matrix = new Matrix();
         public Bitmap ApplyEdgeDetection(Bitmap sourceBitmap, string selection)
         {

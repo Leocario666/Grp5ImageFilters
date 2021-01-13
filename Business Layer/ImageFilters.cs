@@ -8,6 +8,13 @@ namespace Business_Layer
 {
     public class ImageFilters : IImageFilters
     {
+        public IImageFilters iimageFilters;
+
+        public ImageFilters(IImageFilters iimageFilters)
+        {
+            this.iimageFilters = iimageFilters;
+        }
+
         //apply color filter with primary color numbers
         public Bitmap ApplyFilter(Bitmap bmp, int alpha, int red, int blue, int green)
         {

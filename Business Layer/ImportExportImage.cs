@@ -7,7 +7,14 @@ namespace Business_Layer
 {
     public class ImportExportImage : IImportExportImage
     {
-        InOutPutFile ioFile = new InOutPutFile();
+        public IImportExportImage iimportExportImage;
+        private IInOutPutFile ioFile;
+
+        public ImportExportImage(IImportExportImage iimportExportImage, IInOutPutFile ioFile)
+        {
+            this.iimportExportImage = iimportExportImage;
+            this.ioFile = ioFile;
+        }
 
         public void SaveImg(Bitmap bitmap)
         {

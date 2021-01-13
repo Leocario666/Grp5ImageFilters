@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Business_Layer
 {
-   interface IEdgeFilters
+   public interface IEdgeFilters
     {
         Bitmap ApplyEdgeDetection(Bitmap sourceBitmap, string selection);
 

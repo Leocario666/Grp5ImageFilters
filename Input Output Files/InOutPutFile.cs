@@ -8,6 +8,14 @@ namespace Input_Output_Files
 {
     public class InOutPutFile : IInOutPutFile
     {
+        public IInOutPutFile iinoutputfile;
+
+        public InOutPutFile(IInOutPutFile iinoutputfile)
+        {
+            this.iinoutputfile = iinoutputfile;
+        }
+
+
         public Bitmap LoadImage()
         {
             OpenFileDialog ofd = new OpenFileDialog();

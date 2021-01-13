@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Business_Layer
 {
-    interface IImportExportImage
+    public interface IImportExportImage
     {
         void SaveImg(Bitmap bitmap);
 

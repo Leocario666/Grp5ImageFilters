@@ -13,24 +13,31 @@ namespace Presentation_Layer
 {
     public partial class MainForm : Form
     {
-            private readonly ImportExportImage importExportImage = new ImportExportImage();
-        private readonly EdgeFilters edgeFilters = new EdgeFilters();
-        private readonly ImageFilters imageFilters = new ImageFilters();
+        private readonly IEdgeFilters iedgeFilters;
+        private readonly IImageFilters iimageFilters;
+
+        private ImageController ic;
+        private EdgeFilters edgeFilters;
+        private ImageFilters imageFilters;
+
         private Bitmap originalBitmap;
         private Bitmap bitmapWithFilter;
         public MainForm()
         {
             InitializeComponent();
+            this.ic = new ImageController();
+            this.edgeFilters = new EdgeFilters(iedgeFilters);
+            this.imageFilters = new ImageFilters(iimageFilters);
         }
 
         private void buttonSave_click(object sender, EventArgs e)
         {
-            importExportImage.SaveImg((Bitmap)picPreview.Image);
+            ic.SaveImg((Bitmap)picPreview.Image);
         }
 
         private void buttonLoad_Click(object sender, EventArgs e)
         {
-            originalBitmap = importExportImage.LoadImg();
+            originalBitmap = ic.LoadImg();
             if (originalBitmap != null)
             {
                 picPreview.Image = originalBitmap;
@@ -54,23 +61,29 @@ namespace Presentation_Layer
 
         private void buttonHell_Click(object sender, EventArgs e)
         {
+            picPreview.Image = bitmapWithFilter;
             picPreview.Image = imageFilters.ApplyFilter((Bitmap)picPreview.Image, 1, 1, 10, 15);
             bitmapWithFilter = (Bitmap)picPreview.Image;
             buttonHell.Enabled = false;
+            cmbEdgeDetection.SelectedItem = "None";
         }
 
         private void buttonZen_Click(object sender, EventArgs e)
         {
+            picPreview.Image = bitmapWithFilter;
             picPreview.Image = imageFilters.ApplyFilter((Bitmap)picPreview.Image, 1, 10, 1, 1);
             bitmapWithFilter = (Bitmap)picPreview.Image;
             buttonZen.Enabled = false;
+            cmbEdgeDetection.SelectedItem = "None";
         }
 
         private void buttonNight_Click(object sender, EventArgs e)
         {
+            picPreview.Image = bitmapWithFilter;
             picPreview.Image = imageFilters.ApplyFilter((Bitmap)picPreview.Image, 1, 1, 1, 25);
             bitmapWithFilter = (Bitmap)picPreview.Image;
             buttonNight.Enabled = false;
+            cmbEdgeDetection.SelectedItem = "None";
         }
 
         private void buttonReset_Click(object sender, EventArgs e)

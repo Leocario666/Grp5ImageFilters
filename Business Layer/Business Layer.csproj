@@ -44,8 +44,10 @@
   <ItemGroup>
     <Compile Include="EdgeFilters.cs" />
     <Compile Include="IEdgeFilters.cs" />
+    <Compile Include="IImageController.cs" />
     <Compile Include="IImageFilters.cs" />
     <Compile Include="IImportExportImage.cs" />
+    <Compile Include="ImageController.cs" />
     <Compile Include="ImageFilters.cs" />
     <Compile Include="ImportExportImage.cs" />
     <Compile Include="Matrix.cs" />
