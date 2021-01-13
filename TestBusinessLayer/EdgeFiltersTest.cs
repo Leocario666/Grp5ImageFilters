@@ -12,8 +12,13 @@ namespace TestBusinessLayer
     [TestClass]
     public class EdgeFiltersTest
     {
-        private readonly EdgeFilters edgeFilters = new EdgeFilters();
+        private IEdgeFilters edgeFilters;
         private readonly CompareBitmap compareBitmap = new CompareBitmap();
+
+        public EdgeFiltersTest()
+        {
+            edgeFilters = new EdgeFilters(edgeFilters);
+        }
 
         [TestMethod]
         public void TestApplyEdgeDetectionSelectionNull()
